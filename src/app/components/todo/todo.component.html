@@ -1,0 +1,10 @@
+<div [style.borderColor]="todo.priority | priorityColor" class="container" *ngIf="todo">
+  <span>{{todo.name | uppercase}}</span>
+  <span>{{todo.creationDate | epochFormatter}}</span>
+  <span>{{todo.tags | tagsString: '#'}}</span>
+  <span *ngIf="todo.doneDate">{{todo.doneDate | epochFormatter}}</span>
+  <div>
+    <button (click)="todoCompleted.emit(todo)" [style.backgroundColor]="todo.priority | priorityColor" *ngIf="!todo.doneDate">completato</button>
+    <button (click)="todoDeleted.emit(todo)" class="delete-btn" *ngIf="todo.doneDate">cancella</button>
+  </div>
+</div>

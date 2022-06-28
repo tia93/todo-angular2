@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Todo } from 'src/app/model/todo';
 import { DataService } from 'src/app/services/data.service';
 
@@ -12,21 +12,47 @@ export class EditComponent implements OnInit {
 
   public todo: Todo = {
     name: '',
-    creationDate: new Date().getTime(),
+    creationDate: -1,
     tags: [],
     priority: 0
   };
 
-  constructor(private route: ActivatedRoute, private dataS: DataService) { }
+  constructor(private route: ActivatedRoute, private dataS: DataService, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if(id){
-      const selctedTodo = this.dataS.getTodoById(id)
-      if(selctedTodo){
-        this.todo = selctedTodo;
-      }
+      this.dataS.getTodoById(id).subscribe({
+        next: t => {
+          if(t){
+            this.todo = t
+          }
+        },
+        error: err => console.log(err)
+      })
     }
+  }
+
+  convertTags(tagsString: string){
+    return tagsString.toLowerCase().split(' ');
+  }
+
+  saveTodo(){
+
+    if (this.todo.creationDate === -1) {
+      this.todo.creationDate = new Date().getTime();
+    }
+
+    if (this.todo.priority < 0) {
+      this.todo.priority = 0;
+    }
+
+    if (this.todo.priority > 3) {
+      this.todo.priority = 3
+    }
+
+    this.dataS.saveTodo(this.todo);
+    this.router.navigate(['/todo'])
   }
 
 }

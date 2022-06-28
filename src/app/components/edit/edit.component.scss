@@ -22,3 +22,16 @@
 input{
   min-width: 50%;
 }
+
+button {
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  background-color: crimson;
+}
+
+button:disabled{
+ background-color: rgba(220, 20, 60, 0.247);
+}

@@ -15,6 +15,12 @@ export class TodoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // const newTodo: Todo = {
+    //   name: '',
+    //   creationDate:1,
+    //   priority:1,
+    //   tags:[]
+    // }
   }
 
 }

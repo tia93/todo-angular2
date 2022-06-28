@@ -6,5 +6,6 @@
   <div>
     <button (click)="todoCompleted.emit(todo)" [style.backgroundColor]="todo.priority | priorityColor" *ngIf="!todo.doneDate">completato</button>
     <button (click)="todoDeleted.emit(todo)" class="delete-btn" *ngIf="todo.doneDate">cancella</button>
+    <button class="edit-btn" routerLink="/edit/{{todo.id}}" *ngIf="!todo.doneDate">modifica</button>
   </div>
 </div>

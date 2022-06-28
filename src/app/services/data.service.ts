@@ -61,4 +61,15 @@ export class DataService {
     })
 
   }
+
+  getTodoById(id: string) {
+    // for (const todo of this.todos.value) {
+    //   if (todo.id === id) {
+    //     return todo;
+    //   }
+    // }
+    // return null;
+    return this.todos.value.find(todo => todo.id === id);
+  }
+
 }

@@ -11,5 +11,9 @@
     <span class="label">tags: </span>
     <input type="text" [ngModel]="(todo.tags | tagsString)" (ngModelChange)="this.todo.tags=convertTags($event)">
   </div>
+<<<<<<< HEAD
   <button [disabled]="!todo.name" (click)="saveTodo()">save</button>
+=======
+  <button [disabled]="!todo.name" (click)="saveTodo()">Save</button>
+>>>>>>> 7d4184a389df47402800a1438764f867cc21bded
 </div>

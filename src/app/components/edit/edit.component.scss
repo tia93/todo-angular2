@@ -23,8 +23,12 @@ input{
   min-width: 50%;
 }
 
+<<<<<<< HEAD
 
 button{
+=======
+button {
+>>>>>>> 7d4184a389df47402800a1438764f867cc21bded
   border: none;
   padding: 4px;
   border-radius: 4px;
@@ -34,5 +38,10 @@ button{
 }
 
 button:disabled{
+<<<<<<< HEAD
   background-color: rgba(220, 20, 60, 0.289);
 }
+=======
+ background-color: rgba(220, 20, 60, 0.247);
+}
+>>>>>>> 7d4184a389df47402800a1438764f867cc21bded

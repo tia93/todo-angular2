@@ -9,6 +9,7 @@
   </div>
   <div class="form-field">
     <span class="label">tags: </span>
-    <input type="text" [(ngModel)]="todo.tags">
+    <input type="text" [ngModel]="(todo.tags | tagsString)" (ngModelChange)="this.todo.tags=convertTags($event)">
   </div>
+  <button [disabled]="!todo.name" (click)="saveTodo()">save</button>
 </div>

@@ -12,7 +12,9 @@ import { EditComponent } from '../edit/edit.component';
 })
 export class ListComponent implements OnInit {
 
-  constructor(public dataS: DataService, private route: ActivatedRoute, public dialog: MatDialog) { }
+  constructor(public dataS: DataService,
+              private route: ActivatedRoute,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -25,19 +27,21 @@ export class ListComponent implements OnInit {
       return this.dataS.getDoneTodos()
     }
   }
+
   openDialog(todo?: Todo){
-    if(todo){
-    this.dialog.open(EditComponent, {
-      maxWidth: '500px',
-      width: '90%',
-      data:  {id: todo.id} 
-    })
-    } else{
+    if (todo) {
       this.dialog.open(EditComponent, {
-      maxWidth: '500px',
-      width: '90%',
-      })
-      
+        maxWidth: '500px',
+        width: '90%',
+        data: { id: todo.id }
+      });
+    } else {
+      this.dialog.open(EditComponent, {
+        maxWidth: '500px',
+        width: '90%'
+      });
     }
+
   }
+
 }

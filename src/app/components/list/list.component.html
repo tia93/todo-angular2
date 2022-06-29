@@ -4,11 +4,9 @@
   [todo]="todo"
   (todoCompleted)="dataS.completeTodo($event)"
   (todoDeleted)="dataS.deleteTodo($event)"
-  (todoEdited)="openDialog($event)"
-  >
-</app-todo>
-
-<button (click)="openDialog()" class="add-btn" mat-fab color="accent">
-  <mat-icon>add</mat-icon>
-</button>
+  (todoEdited)="openDialog($event)">
+  </app-todo>
+  <button (click)="openDialog()" class="add-btn" mat-fab color="accent">
+    <mat-icon>add</mat-icon>
+  </button>
 </div>

@@ -20,13 +20,16 @@ export class EditComponent implements OnInit {
 
   public id: string | null = ''
 
-  constructor( private dataS: DataService,public dialogRef: MatDialogRef<EditComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-  ) {}
- 
+  constructor(
+    private dataS: DataService,
+    public dialogRef: MatDialogRef<EditComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+    ) { }
 
   ngOnInit(): void {
-    this.id = this.data.id;
+    if (this.data) {
+      this.id = this.data.id
+    }
     if(this.id){
       this.dataS.getTodoById(this.id).subscribe({
         next: t => {
@@ -59,7 +62,6 @@ export class EditComponent implements OnInit {
 
     this.dataS.saveTodo(this.todo);
     this.dialogRef.close();
-    
   }
 
 }

@@ -10,7 +10,7 @@ export class PriorityColorPipe implements PipeTransform {
       case -1:
         return 'gray'
       case 0:
-        return 'green'
+        return 'rgb(0,220,0)'
       case 1:
         return 'yellow'
       case 2:

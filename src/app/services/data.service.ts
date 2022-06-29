@@ -8,7 +8,7 @@ import { Todo } from '../model/todo';
 })
 export class DataService {
 
-  private readonly BASE_URL = 'https://62b965c0ff109cd1dc911428.mockapi.io/todo'
+  private readonly BASE_URL = 'https://62860d1f96bccbf32d6e2bf5.mockapi.io/todos'
 
   public todos = new BehaviorSubject<Todo[]>([]);
 

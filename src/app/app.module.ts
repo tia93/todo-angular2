@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatInputModule } from '@angular/material/input';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+
+
+
+
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
@@ -20,6 +21,7 @@ import { TagsStringPipe } from './pipes/tags-string/tags-string.pipe';
 import { PrioritySortPipe } from './pipes/priority-sort/priority-sort.pipe';
 import { EditComponent } from './components/edit/edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MatCommonModule } from '@angular/material/core';
 
 
 
@@ -45,9 +47,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatChipsModule,
-    MatDialogModule,
-    MatInputModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

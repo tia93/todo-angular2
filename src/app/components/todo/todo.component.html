@@ -9,7 +9,7 @@
     <div class="divider" [style.backgroundColor]="todo.priority | priorityColor"></div>
   </mat-card-content>
   <mat-card-actions class="actions">
-    <button routerLink="/edit/{{todo.id}}" *ngIf="!todo.doneDate" mat-icon-button>
+    <button (click)="todoEdited.emit(todo)"  *ngIf="!todo.doneDate" mat-icon-button>
       <mat-icon>edit</mat-icon>
     </button>
     <button (click)="todoCompleted.emit(todo)" *ngIf="!todo.doneDate" mat-icon-button>
